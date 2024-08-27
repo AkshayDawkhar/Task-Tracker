@@ -1,12 +1,16 @@
 package main
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
 type Massage struct {
 	gorm.Model
 
-	Name string `json:"name"`
-	Age  int16
+	Name  string `json:"name"`
+	Age   int16
+	class int16
+
 	// Time int16
 }
 type Massage1 struct {
