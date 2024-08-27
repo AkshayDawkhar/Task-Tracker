@@ -1,4 +1,4 @@
-package main
+package models
 
 import (
 	"gorm.io/gorm"
@@ -9,7 +9,7 @@ type Massage struct {
 
 	Name  string `json:"name"`
 	Age   int16
-	class int16
+	Class int16
 
 	// Time int16
 }

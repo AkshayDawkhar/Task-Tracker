@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/AkshayDawkhar/Task-Tracker/models"
+	"github.com/AkshayDawkhar/Task-Tracker/routers"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -19,12 +21,12 @@ func main() {
 	}
 
 	// Migrate the schema
-	DBC.AutoMigrate(&Massage{})
+	DBC.AutoMigrate(&models.Massage{})
 
-	DBC.Create(&Massage{Name: "akshay", Age: 12, class: 12})
+	DBC.Create(&models.Massage{Name: "akshay", Age: 12, Class: 12})
 
 	router := http.NewServeMux()
-	SetupRoute(router)
+	routers.SetupRoute(router)
 	http.ListenAndServe(":8000", router)
 	// http.ListenAndServeTLS()
 }
